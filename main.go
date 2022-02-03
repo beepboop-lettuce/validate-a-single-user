@@ -7,20 +7,20 @@ import (
 
 const (
 	nothingTyped = "Usage: [username] [password]"
-	wrongUser    = "wrong username"
-	wrongPswd    = "wrong password"
-	user         = "jack"
-	pswd         = "1888"
+	denied       = "Wrong username or password, try again"
+	user1, user2 = "jack", "quentin"
+	pswd1, pswd2 = "1888", "1234"
+	granted      = "Access granted!"
 )
 
 func main() {
 	if len(os.Args) < 3 {
 		fmt.Println(nothingTyped)
-	} else if os.Args[1] != user {
-		fmt.Println(wrongUser)
-	} else if os.Args[2] != pswd {
-		fmt.Println(wrongPswd)
-	} else if os.Args[1] == user && os.Args[2] == pswd {
-		fmt.Println("Access granted!")
+	} else if os.Args[1] == user1 && os.Args[2] == pswd1 {
+		fmt.Println(granted)
+	} else if os.Args[1] == user2 && os.Args[2] == pswd2 {
+		fmt.Println(granted)
+	} else {
+		fmt.Println(denied)
 	}
 }
