@@ -1,19 +1,24 @@
 package main
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 const (
-	blank := "Usage: [username] [password]",
-	wrongUser := "wrong username",
-	wrongPswd := "wrong password",
-	user := "jack",
-	pswd := "1888",
+	nothingTyped := "Usage: [username] [password]"
+	wrongUser := "wrong username"
+	wrongPswd := "wrong password"
+	user := "jack"
+	pswd := "1888"
 
 )
 
 
 func main() {
-	if len(os.Args) < 3 {
-		fmt.Printf("Usage: %q\n", blank)
+	if len(os.Args[1]) < 3 {
+		fmt.Println(nothingTyped)
+	} else if os.Args[1] != user {
+		fmt.Printf()
 	}
 }
