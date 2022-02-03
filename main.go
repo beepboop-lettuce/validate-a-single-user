@@ -20,5 +20,7 @@ func main() {
 		fmt.Println(wrongUser)
 	} else if os.Args[2] != pswd {
 		fmt.Println(wrongPswd)
+	} else if os.Args[1] == user && os.Args[2] == pswd {
+		fmt.Println("Access granted!")
 	}
 }
